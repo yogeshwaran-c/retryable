@@ -129,7 +129,8 @@ describe("retry", () => {
           async () => { calls++; throw new Error("fail"); },
           {
             retries: 10,
-            delay: 10,
+            delay: 50,
+            factor: 1,
             jitter: true,
             onRetry: (_err, _attempt, delay) => { delays.push(delay); },
           },
